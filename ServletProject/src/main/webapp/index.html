@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="css/styles.css">
+<meta charset="ISO-8859-1">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  
+
+  
+  <title>My Film DB</title>
+</head>
+<body>
+
+<h1>WELCOME </h1>
+
+
+  
+  <form method="get" action="./getFilm">
+  <input type="text" placeholder="Search.." id="getMovie" name="getFilm"></input>
+  <button  class="btn btn-primary" id="searchfilm">Search Film</button>
+   
+
+  <br><br>
+  
+  <input type="radio"  name="data" value="filmid" id="filmid">
+  <label for="id">Search By ID</label><br>
+  
+  <input type="radio"  name="data" value="filmname" id="filmname">
+  <label for="name">Search By Name</label><br>
+  
+  <label for="Choice">Choose Your Data Format:</label>
+ 
+  <select name="format" id="combobox" class="btn btn-primary dropdown-toggle">
+    <option value="json" id="json">json</option>
+    <option value="xml" id="xml">xml</option>
+     <option value="text" id="text">text</option>
+  </select>
+  </form>
+  
+  <br>
+  
+  <br>
+  
+<p id="id"></p>
+<p id="title"></p>
+<p id="year"></p>
+<p id="director"></p>
+<p id="stars"></p>
+<p id="review"></p>
+  
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">Add Film</button>
+   
+     <div class="modal fade" id="create" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add Film</h4>
+        </div>
+        
+        <div class="modal-body">
+
+        <form method="post" action="./AddFilm">
+        
+        <label>ID:</label><input type="text" name="fid"></input>
+        <br><br>
+        <label>Title:</label><input type="text"  name="ftitle"></input>
+          <br><br>
+        <label>YEAR:</label><input type="text"  name="fyear"></input>
+          <br><br>
+        <label>DIRECTOR:</label><input type="text"  name="fdirector"></input>
+          <br><br>
+        <label>STARS:</label><input type="text"  name="fstars"></input>
+          <br><br>
+        <label>REVIEWS</label><input type="text" name="freview"></input>
+        
+        <input type=submit>
+        </form>    
+           
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+ 
+
+   
+    
+    
+    
+      
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#update">Update Film</button>
+   
+     <div class="modal fade" id="update" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Update Film</h4>
+        </div>
+        
+        <div class="modal-body">
+
+        <form method="post" action="./UpdateFilm">
+        
+        <label>ID:</label><input type="text" name="updateid"></input>
+        <br><br>
+        <label>Title:</label><input type="text"  name="updatetitle"></input>
+          <br><br>
+        <label>YEAR:</label><input type="text"  name="updateyear"></input>
+          <br><br>
+        <label>DIRECTOR:</label><input type="text"  name="updatedirector"></input>
+          <br><br>
+        <label>STARS:</label><input type="text"  name="updatestars"></input>
+          <br><br>
+        <label>REVIEWS</label><input type="text" name="updatereview"></input>
+        
+        <input type=submit>
+        </form>    
+           
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+ 
+    
+     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Delete">Delete Film</button>
+   
+     <div class="modal fade" id="Delete" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Delete Film</h4>
+        </div>
+        
+        <div class="modal-body">
+
+        <form method="post" action="./DeleteFilm">
+        
+        <label>ID:</label><input type="text" name="Dfilm"></input>
+        <br><br>
+        <input type=submit>
+        </form>    
+           
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+ </body>
+ 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../js/Displaydata.js"></script>
+</html>
